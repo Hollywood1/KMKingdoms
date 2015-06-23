@@ -6,7 +6,8 @@ if(!isset($_SESSION['uid'])){
 }
 	if(isset($_POST['editaccount'])){
 	$house = $_POST['house'];
-	$upd1 = mysql_query("UPDATE `user` SET `house`='$house' WHERE `id`='$uid'") or die(mysql_error()); echo "You have updated your information"; }
+	$currentlord = $_POST['currentlord'];
+	$upd1 = mysql_query("UPDATE `user` SET `house`='$house', `lord`='$currentlord' WHERE `id`='$uid'") or die(mysql_error()); echo "You have updated your information"; }
 	else{
 	?>
 <b>Upload a flag</b><br />

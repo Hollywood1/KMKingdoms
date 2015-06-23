@@ -12,7 +12,7 @@ if(!isset($_SESSION['uid'])){
     <table cellpadding="3" cellspacing="5">
         <tr>
             <td>Current Lord:</td>
-            <td><i><?php echo $user['currentlord']; ?> <?php echo $user['house']; ?></i></td>
+            <td><i><?php echo $user['lord']; ?> <?php echo $user['house']; ?></i></td>
         </tr>
         <tr>
             <td></td>
