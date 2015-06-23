@@ -6,25 +6,25 @@ if(!isset($_SESSION['uid'])){
     echo "You must be logged in to view this page!";
 }else{
     if(isset($_POST['train'])){
-        $worker = protect($_POST['worker']);
+        $merchant = protect($_POST['merchant']);
         $farmer = protect($_POST['farmer']);
         $warrior = protect($_POST['warrior']);
         $defender = protect($_POST['defender']);
 		$wizard = protect($_POST['wizard']);
-        $food_needed = (10 * $worker) + (10 * $farmer) + (10 * $warrior) + (10 * $defender) + (10 * $wizard);
-        if($worker < 0 || $farmer < 0 || $warrior < 0 || $defender < 0){
+        $food_needed = (10 * $merchant) + (10 * $farmer) + (10 * $warrior) + (10 * $defender) + (10 * $wizard);
+        if($merchant < 0 || $farmer < 0 || $warrior < 0 || $defender < 0){
             output("You must train a positive number of units!");
         }elseif($stats['food'] < $food_needed){
             output("You do not have enough food!");
         }else{
-            $unit['worker'] += $worker;
+            $unit['merchant'] += $merchant;
             $unit['farmer'] += $farmer;
             $unit['warrior'] += $warrior;
             $unit['defender'] += $defender;
 			$unit['wizard'] += $wizard;
             
             $update_unit = mysql_query("UPDATE `unit` SET 
-                                        `worker`='".$unit['worker']."',
+                                        `merchant`='".$unit['merchant']."',
                                         `farmer`='".$unit['farmer']."',
                                         `warrior`='".$unit['warrior']."',
                                         `defender`='".$unit['defender']."',
@@ -37,25 +37,25 @@ if(!isset($_SESSION['uid'])){
             output("You have trained your units!");
         }
     }elseif(isset($_POST['untrain'])){
-        $worker = protect($_POST['worker']);
+        $merchant = protect($_POST['merchant']);
         $farmer = protect($_POST['farmer']);
         $warrior = protect($_POST['warrior']);
         $defender = protect($_POST['defender']);
         $wizard = protect($_POST['wizard']);
-        $food_gained = (8 * $worker) + (8 * $farmer) + (8 * $warrior) + (8 * $defender) + (8 * $wizard);
-        if($worker < 0 || $farmer < 0 || $warrior < 0 || $defender < 0 || $wizard < 0 ){
+        $food_gained = (8 * $merchant) + (8 * $farmer) + (8 * $warrior) + (8 * $defender) + (8 * $wizard);
+        if($merchant < 0 || $farmer < 0 || $warrior < 0 || $defender < 0 || $wizard < 0 ){
             output("You must untrain a positive number of units!");
-        }elseif($worker > $unit['worker'] || $farmer > $unit['farmer'] || 
+        }elseif($merchant > $unit['merchant'] || $farmer > $unit['farmer'] || 
                 $warrior > $unit['warrior'] || $defender > $unit['defender'] || $wizard > $unit['wizard']){
             output("You do not have that many units to untrain!");
         }else{
-            $unit['worker'] -= $worker;
+            $unit['merchant'] -= $merchant;
             $unit['farmer'] -= $farmer;
             $unit['warrior'] -= $warrior;
             $unit['defender'] -= $defender;
             $unit['wizard'] -= $wizard;
             $update_unit = mysql_query("UPDATE `unit` SET 
-                                        `worker`='".$unit['worker']."',
+                                        `merchant`='".$unit['merchant']."',
                                         `farmer`='".$unit['farmer']."',
                                         `warrior`='".$unit['warrior']."',
                                         `defender`='".$unit['defender']."',
@@ -82,10 +82,10 @@ if(!isset($_SESSION['uid'])){
             <td><b>Train More</b></td>
         </tr>
         <tr>
-            <td>Worker</td>
-            <td><?php echo number_format($unit['worker']); ?></td>
+            <td>merchant</td>
+            <td><?php echo number_format($unit['merchant']); ?></td>
             <td>10 food</td>
-            <td><input type="text" name="worker" /></td>
+            <td><input type="text" name="merchant" /></td>
         </tr>
         <tr>
             <td>Farmer</td>
@@ -129,10 +129,10 @@ if(!isset($_SESSION['uid'])){
             <td><b>Untrain More</b></td>
         </tr>
         <tr>
-            <td>Worker</td>
-            <td><?php echo number_format($unit['worker']); ?></td>
+            <td>merchant</td>
+            <td><?php echo number_format($unit['merchant']); ?></td>
             <td>8 food</td>
-            <td><input type="text" name="worker" /></td>
+            <td><input type="text" name="merchant" /></td>
         </tr>
         <tr>
             <td>Farmer</td>

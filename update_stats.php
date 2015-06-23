@@ -6,7 +6,7 @@ if ($updatehp > 100) {
 	$updatehp = 100;
 }
 
-$income = round( ($health*0.01) * ((2 * $unit['worker'])+(5 * $building['taxhouse'])) );
+$income = round( ($health*0.01) * ((2 * $unit['merchant'])+(5 * $building['taxhouse'])) );
 
 $farming = round( ($health*0.01) * ( 5 * pow($unit['farmer'],0.5) * (5 * $building['granary']) ) ) ;
 
