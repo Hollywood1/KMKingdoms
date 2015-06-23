@@ -1,6 +1,7 @@
 <?php
 include("functions.php");
 connect();
+$uid=$_SESSION['uid'];
 ?>
 <html>
 <head>
@@ -8,7 +9,7 @@ connect();
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="header">TITLE IN PROGRESS?</div>
+<div id="header">Work in progress. <?php if(isset($_SESSION['uid'])) { ?> Your ID is <?php echo $uid; }?></div>
 <div id="container">
 <div id="navigation"><div id="nav_div">
 <?php
