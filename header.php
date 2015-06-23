@@ -19,6 +19,7 @@ if(isset($_SESSION['uid'])){
     &raquo; <a href="rankings.php">Battle Players</a><br /><br />
     &raquo; <a href="units.php">Your Units</a><br /><br />
     &raquo; <a href="weapons.php">Your Weapons</a><br /><br />
+    &raquo; <a href="editaccount.php">Edit Account</a><br /><br />
     &raquo; <a href="logout.php">Logout</a>
     <?php
 }else{

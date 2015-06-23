@@ -6,12 +6,13 @@ if(!isset($_SESSION['uid'])){
     echo "You must be logged in to view this page!";
 }else{
     ?>
-    <center><h2>Your Stats</h2></center>
+    <center><h2>House <?php echo $user['house']; ?></h2></center>
     <br />
+	<center>
     <table cellpadding="3" cellspacing="5">
         <tr>
-            <td>Username:</td>
-            <td><i><?php echo $user['username']; ?></i></td>
+            <td>Current Lord:</td>
+            <td><i><?php echo $user['currentlord']; ?> <?php echo $user['house']; ?></i></td>
         </tr>
         <tr>
             <td></td>

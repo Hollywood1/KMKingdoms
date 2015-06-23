@@ -2,7 +2,7 @@
 
 function connect() {
     mysql_connect("localhost","nillbye","xJZ9MnhTW8");
-    mysql_select_db("game");
+    mysql_select_db("nillbye_devgame");
 }
 
 function protect($string) {
