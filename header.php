@@ -5,11 +5,11 @@ $uid=$_SESSION['uid'];
 ?>
 <html>
 <head>
-<title>TITLE IN PROGRESS?</title>
+<title>KMKingdoms</title>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="header">Work in progress. <?php if(isset($_SESSION['uid'])) { ?> Your ID is <?php echo $uid; }?></div>
+<div id="header">Work in progress. <?php if(isset($_SESSION['uid'])) { ?> Hello your Lordship, Your ID is <?php echo $uid; }?></div>
 <div id="container">
 <div id="navigation"><div id="nav_div">
 <?php
