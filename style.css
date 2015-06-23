@@ -1,3 +1,5 @@
+@font-face { font-family: Goudy; src: url('resources/Valiant.ttf'); } 
+
 body {
     background-color: #C4C4C4;
 }
@@ -11,6 +13,7 @@ body a {
     width: 100%;
     color: #FFFFFF;
     font-size: 18pt;
+	font-family: Goudy;
     border: 1px solid #000000;
 }
 
@@ -69,10 +72,33 @@ html
 	margin-top: 0;
 	margin-bottom: 0;
 }
-table, caption
+div#stattitle
 {
-	margin-left: auto;
-	margin-right: auto;
+	font-family: Goudy;
+}
+table#personalstats
+{
+	position:relative;
+	float: left;
+}
+table#personalstats td
+{
+	text-align: left;
+}
+table#populationstats
+{
+	position:relative;
+}
+table#populationstats td
+{
+	text-align: left;
+}
+table#buildingstats td
+{
+	text-align: left;
+}
+table#personalstats, table#populationstats, table#buildingstats, {
+  display:inline-block;
 }
 td
 {
