@@ -24,11 +24,8 @@ if(isset($_POST['register'])){
         }elseif(mysql_num_rows($register2) > 0){
             echo "That e-mail address is already in use!";
         }else{
-<<<<<<< HEAD:register.php
             $ins1 = mysql_query("INSERT INTO `stats` (`health`,`gold`,`attack`,`defense`,`food`,`income`,`farming`,`mana`,`turns`) VALUES (100,100,10,10,100,10,11,0,100)") or die(mysql_error());
-=======
             $ins1 = mysql_query("INSERT INTO `stats` (`health`,`gold`,`mana`,`attack`,`defense`,`food`,`income`,`farming`,`manapow`,`turns`) VALUES (100,100,100,10,10,100,10,11,0,100)") or die(mysql_error());
->>>>>>> origin/pr/4:newcode/register.php
             $ins2 = mysql_query("INSERT INTO `unit` (`worker`,`farmer`,`warrior`,`defender`,`wizard`) VALUES (5,5,0,0,0)") or die(mysql_error());
             $ins3 = mysql_query("INSERT INTO `user` (`username`,`password`,`email`) VALUES ('$username','".md5($password)."','$email')") or die(mysql_error());
             $ins4 = mysql_query("INSERT INTO `weapon` (`sword`,`shield`,`tome`) VALUES (0,0,0)") or die(mysql_error());
