@@ -83,6 +83,26 @@ if(!isset($_SESSION['uid'])){
             <td>Wizards:</td>
             <td><i><?php echo $unit['wizard']; ?></i></td>
         </tr>
+          <tr>
+            <td>Towers:</td>
+            <td><i><?php echo $building['tower']; ?></i></td>
+        </tr>
+        <tr>
+            <td>Seige Equipment:</td>
+            <td><i><?php echo $building['seige']; ?></i></td>
+        </tr>
+        <tr>
+            <td>Wizard Guilds:</td>
+            <td><i><?php echo $building['wizguild']; ?></i></td>
+        </tr>
+        <tr>
+            <td>Granaries:</td>
+            <td><i><?php echo $building['granary']; ?></i></td>
+        </tr>
+        <tr>
+            <td>Tax Houses:</td>
+            <td><i><?php echo $building['taxhouse']; ?></i></td>
+        </tr>
     </table>
     <?php
 }
