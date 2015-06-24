@@ -17,7 +17,8 @@ if(isset($_SESSION['uid'])){
     include("safe.php");
     ?>
     &raquo; <a href="main.php">Your Stats</a><br /><br />
-    &raquo; <a href="rankings.php">Battle Players</a><br /><br />
+	&raquo; <a href="rankings.php">Players</a><br /><br />
+    &raquo; <a href="battler.php">Battle Players</a><br /><br />
     &raquo; <a href="units.php">Your Units</a><br /><br />
     &raquo; <a href="weapons.php">Your Weapons</a><br /><br />
     &raquo; <a href="editaccount.php">Edit Account</a><br /><br />
