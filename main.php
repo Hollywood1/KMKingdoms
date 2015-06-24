@@ -18,6 +18,10 @@ if(!isset($_SESSION['uid'])){
             <td><i><?php echo $user['lord']; ?> <?php echo $user['house']; ?></i></td>
         </tr>
         <tr>
+            <td>Location:</td>
+            <td><i><?php echo $user['location'] ?></i></td>
+        </tr>
+        <tr>
             <td>Health:</td>
             <td><i><?php echo $stats['health']; ?></i></td>
         </tr>
@@ -85,8 +89,8 @@ if(!isset($_SESSION['uid'])){
             <td><i><?php echo $building['tower']; ?></i></td>
         </tr>
         <tr>
-            <td>Seige Equipment:</td>
-            <td><i><?php echo $building['seige']; ?></i></td>
+            <td>Siege Equipment:</td>
+            <td><i><?php echo $building['siege']; ?></i></td>
         </tr>
         <tr>
             <td>Wizard Guilds:</td>
