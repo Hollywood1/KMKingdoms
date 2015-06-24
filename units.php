@@ -73,6 +73,7 @@ if(!isset($_SESSION['uid'])){
     <br />
     You can train and untrain your units here.
     <br /><br />
+	<center>You have <?php echo $stats['food']; ?> food.</center>
     <form action="units.php" method="post">
     <table cellpadding="5" cellspacing="5">
         <tr>
@@ -82,7 +83,7 @@ if(!isset($_SESSION['uid'])){
             <td><b>Train More</b></td>
         </tr>
         <tr>
-            <td>merchant</td>
+            <td>Merchant</td>
             <td><?php echo number_format($unit['merchant']); ?></td>
             <td>10 food</td>
             <td><input type="text" name="merchant" /></td>
