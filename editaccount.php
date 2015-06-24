@@ -14,6 +14,7 @@ if(!isset($_SESSION['uid'])){
 <b>Upload a flag</b><br />
 <br />
 <b>House Information</b><br /><br />
+<b>Since this is a dev feature, you must enter ALL information for it to update. Otherwise it will update with empty values.</b>
 <form action="editaccount.php" method="POST">
 House: <input type="text" name="house"/><br /><br />
 Lord: <input type="text" name="currentlord"/><br /><br />
