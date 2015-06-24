@@ -32,6 +32,7 @@ if(isset($_POST['register'])){
             $ins3 = mysql_query("INSERT INTO `user` (`username`,`password`,`email`,`lord`,`house`,`location`) VALUES ('$username','".md5($password)."','$email','$currentlord','$house','$location')") or die(mysql_error());
             $ins4 = mysql_query("INSERT INTO `weapon` (`sword`,`shield`,`tome`) VALUES (0,0,0)") or die(mysql_error());
             $ins5 = mysql_query("INSERT INTO `ranking` (`attack`,`defense`,`overall`) VALUES(0,0,0)") or die(mysql_error());
+			$ins6 = mysql_query("INSERT INTO `building` (`tower`,`siege`,`wizguild`,`granary`,`taxhouse`) VALUES(5,5,5,5,5)") or die(mysql_error());
             echo "You have registered!";
         }
     }
