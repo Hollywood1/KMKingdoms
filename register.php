@@ -32,7 +32,7 @@ if(isset($_POST['register'])){
             $ins3 = mysql_query("INSERT INTO `user` (`username`,`password`,`email`,`lord`,`house`,`location`) VALUES ('$username','".md5($password)."','$email','$currentlord','$house','$location')") or die(mysql_error());
             $ins4 = mysql_query("INSERT INTO `weapon` (`sword`,`shield`,`tome`) VALUES (0,0,0)") or die(mysql_error());
             $ins5 = mysql_query("INSERT INTO `ranking` (`attack`,`defense`,`overall`) VALUES(0,0,0)") or die(mysql_error());
-			$ins6 = mysql_query("INSERT INTO `building` (`tower`,`siege`,`wizguild`,`granary`,`taxhouse`) VALUES(5,5,5,5,5)") or die(mysql_error());
+			$ins6 = mysql_query("INSERT INTO `building` (`tower`,`siege`,`wizguild`,`granary`,`taxhouse`) VALUES(0,0,0,0,0)") or die(mysql_error());
             echo "You have registered!";
         }
     }
@@ -47,6 +47,14 @@ E-mail: <input type="text" name="email"/><br />
 Lord: <input type="text" name="currentlord"/><br />
 House: <input type="text" name="house"/><br />
 Location: <input type="text" name="location"/><br />
+Alignment <b>[AFFECTS GAMEPLAY AND CANNOT BE CHANGED!]</b>:
+<select name="align">
+  <option value="order">Order [Defense Based]</option>
+  <option value="nature">Nature [Farming Based]</option>
+  <option value="blood">Blood [Attack Based]</option>
+  <option value="gold">Gold [Income Based]</option>
+   <option value="magic">Magic [Mana Based]</option>
+</select>
 <input type="submit" name="register" value="Register"/>
 </form>
 <?php
