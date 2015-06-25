@@ -1,14 +1,15 @@
 <?php
 include("functions.php");
 connect();
+$uid=$_SESSION['uid'];
 ?>
 <html>
 <head>
-<title>TITLE IN PROGRESS?</title>
+<title>KMKingdoms</title>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="header">TITLE IN PROGRESS?</div>
+<div id="header"><?php if(!isset($_SESSION['uid'])){ ?> Work in progress. <?php }else{ ?> Hello your Lordship, Your ID is <?php echo $uid; }?></div>
 <div id="container">
 <div id="navigation"><div id="nav_div">
 <?php
@@ -16,9 +17,11 @@ if(isset($_SESSION['uid'])){
     include("safe.php");
     ?>
     &raquo; <a href="main.php">Your Stats</a><br /><br />
-    &raquo; <a href="rankings.php">Battle Players</a><br /><br />
+	&raquo; <a href="rankings.php">Players</a><br /><br />
+    &raquo; <a href="battler.php">Battle Players</a><br /><br />
     &raquo; <a href="units.php">Your Units</a><br /><br />
     &raquo; <a href="weapons.php">Your Weapons</a><br /><br />
+    &raquo; <a href="editaccount.php">Edit Account</a><br /><br />
     &raquo; <a href="logout.php">Logout</a>
     <?php
 }else{

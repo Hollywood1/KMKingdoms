@@ -6,16 +6,20 @@ if(!isset($_SESSION['uid'])){
     echo "You must be logged in to view this page!";
 }else{
     ?>
-    <center><h2>Your Stats</h2></center>
+    <center><h2>House <?php echo $user['house']; ?></h2></center>
     <br />
-    <table cellpadding="3" cellspacing="5">
+	<center>
+    <table cellpadding="3" cellspacing="5" id="personalstats">
+		<tr>
+		<th colspan="2"><div id="stattitle">General</div></th>
+		</tr>
         <tr>
-            <td>Username:</td>
-            <td><i><?php echo $user['username']; ?></i></td>
+            <td>Current Lord:</td>
+            <td><i><?php echo $user['lord']; ?> <?php echo $user['house']; ?></i></td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td>Location:</td>
+            <td><i><?php echo $user['location'] ?></i></td>
         </tr>
         <tr>
             <td>Health:</td>
@@ -23,11 +27,11 @@ if(!isset($_SESSION['uid'])){
         </tr>
         <tr>
         <tr>
-            <td>Attack:</td>
+            <td>Attack Power:</td>
             <td><i><?php echo $stats['attack']; ?></i></td>
         </tr>
         <tr>
-            <td>Defense:</td>
+            <td>Defense Power:</td>
             <td><i><?php echo $stats['defense']; ?></i></td>
         </tr>
         <tr>
@@ -36,35 +40,28 @@ if(!isset($_SESSION['uid'])){
         </tr>
         <tr>
             <td>Gold:</td>
-            <td><i><?php echo $stats['gold']; ?></i></td>
-        </tr>
-        <tr>
-            <td>Income:</td>
-            <td><i><?php echo $stats['income']; ?></i></td>
+            <td><i><?php echo $stats['gold']; ?><br/><sub>+<?php echo $stats['income']; ?> per turn</i></td>
         </tr>
         <tr>
             <td>Food:</td>
-            <td><i><?php echo $stats['food']; ?></i></td>
-        </tr>
-        <tr>
-            <td>Farming:</td>
-            <td><i><?php echo $stats['farming']; ?></i></td>
-        </tr>
-         <tr>
-            <td>Mana Power:</td>
-            <td><i><?php echo $stats['manapow']; ?></i></td>
+            <td><i><?php echo $stats['food']; ?><br/><sub>+<?php echo $stats['farming']; ?> per turn</i></td>
         </tr>
         <tr>
             <td>Turns:</td>
             <td><i><?php echo $stats['turns']; ?></i></td>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
+		</table>
+		<table cellpadding="3" cellspacing="5" id="populationstats">
+		<tr>
+		<th colspan="2"><div id="stattitle">Population Stats</div></th>
+		</tr>
+		<tr>
+            <td>Total Population:</td>
+            <td><i><?php echo (($unit['merchant']) + ($unit['farmer']) + ($unit['defender']) + ($unit['wizard'])); ?></i></td>
         </tr>
         <tr>
-            <td>Workers:</td>
-            <td><i><?php echo $unit['worker']; ?></i></td>
+            <td>Merchants:</td>
+            <td><i><?php echo $unit['merchant']; ?></i></td>
         </tr>
         <tr>
             <td>Farmers:</td>
@@ -81,6 +78,35 @@ if(!isset($_SESSION['uid'])){
         <tr>
             <td>Wizards:</td>
             <td><i><?php echo $unit['wizard']; ?></i></td>
+        </tr>
+		</table>
+		<table cellpadding="3" cellspacing="5" id="buildingstats">
+		<tr>
+		<th colspan="2"><div id="stattitle">Buildings</div></th>
+		</tr>
+        <tr>
+            <td>Towers:</td>
+            <td><i><?php echo $building['tower']; ?></i></td>
+        </tr>
+        <tr>
+            <td>Siege Equipment:</td>
+            <td><i><?php echo $building['siege']; ?></i></td>
+        </tr>
+        <tr>
+            <td>Wizard Guilds:</td>
+            <td><i><?php echo $building['wizguild']; ?></i></td>
+        </tr>
+        <tr>
+            <td>Granaries:</td>
+            <td><i><?php echo $building['granary']; ?></i></td>
+        </tr>
+        <tr>
+            <td>Tax Houses:</td>
+            <td><i><?php echo $building['taxhouse']; ?></i></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
         </tr>
     </table>
     <?php
