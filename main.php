@@ -8,6 +8,13 @@ if(!isset($_SESSION['uid'])){
     ?>
     <center><h2>House <?php echo $user['house']; ?></h2></center>
     <br />
+    <center><h3><?php if ($user['align']= "order") { echo "Magistrate of Order";
+}elseif ($user['align']= "nature") { echo "One With Nature";
+}elseif ($user['align']= "blood") { echo "Spiller of Blood";
+}elseif ($user['align']= "gold") { echo "Master of The Markets";
+}elseif ($user['align']= "magic") { echo "Adept in The Arcane";
+}else{ echo "";} ?></h3></center>
+    <br />
 	<center>
     <table cellpadding="3" cellspacing="5" id="personalstats">
 		<tr>
