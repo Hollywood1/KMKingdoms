@@ -40,3 +40,4 @@ $update_stats = mysql_query("UPDATE `stats` SET
                             WHERE `id`='".$_SESSION['uid']."'") or die(mysql_error());
 
 ?>
+{}
