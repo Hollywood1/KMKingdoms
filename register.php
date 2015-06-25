@@ -45,4 +45,3 @@ E-mail: <input type="text" name="email"/><br />
 <?php
 include("footer.php");
 ?>
-{}
