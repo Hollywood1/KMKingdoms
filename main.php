@@ -8,11 +8,36 @@ if(!isset($_SESSION['uid'])){
     ?>
     <center><h2>House <?php echo $user['house']; ?></h2></center>
     <br />
-    <center><h3><?php if ($user['align']= "order") { echo "Magistrate of Order";
-}elseif ($user['align']= "nature") { echo "One With Nature";
-}elseif ($user['align']= "blood") { echo "Spiller of Blood";
-}elseif ($user['align']= "gold") { echo "Master of The Markets";
-}elseif ($user['align']= "magic") { echo "Adept in The Arcane";
+    <center><h3><?php if ($user['align']= "order") {
+    	if ($dev['devlevel'] = 1) { echo "Captain of The Watch";	} 
+		elseif ($dev['devlevel'] = 2) { echo "Acolyte of Order";}
+		elseif ($dev['devlevel'] = 3) { echo "Saint of Order";}
+		elseif ($dev['devlevel'] = 4) { echo "The Pious";}
+		elseif ($dev['devlevel'] = 5) { echo "Transcendent";}
+}elseif ($user['align']= "nature") {
+		if($dev['devlevel'] = 1) { echo "The Sapling";	} 
+		elseif ($dev['devlevel'] = 2) { echo "Acolyte of Nature";}
+		elseif ($dev['devlevel'] = 3) { echo "Finds Solace in Nature";}
+		elseif ($dev['devlevel'] = 4) { echo "One with Nature";}
+		elseif ($dev['devlevel'] = 5) { echo "Bends Nature to Their Whim";}
+}elseif ($user['align']= "blood") {
+	if($dev['devlevel'] = 1) { echo "Blood Donator";	} 
+		elseif ($dev['devlevel'] = 2) { echo "Blood-Thirsty";}
+		elseif ($dev['devlevel'] = 3) { echo "Saint of The Sanguine";}
+		elseif ($dev['devlevel'] = 4) { echo "Insatiable Blood-Thirst";}
+		elseif ($dev['devlevel'] = 5) { echo "Destroyer of Kingdoms";} 
+}elseif ($user['align']= "gold") {
+	if($dev['devlevel'] = 1) { echo "Merchant";	} 
+		elseif ($dev['devlevel'] = 2) { echo "Member of The Guild";}
+		elseif ($dev['devlevel'] = 3) { echo "Journeyman of The Guild";}
+		elseif ($dev['devlevel'] = 4) { echo "Monopolizer";}
+		elseif ($dev['devlevel'] = 5) { echo "Bathes in Gold";} 
+}elseif ($user['align']= "magic") {
+	if($dev['devlevel'] = 1) { echo "Parlour Trickster";	} 
+		elseif ($dev['devlevel'] = 2) { echo "Student of The Arcane";}
+		elseif ($dev['devlevel'] = 3) { echo "Adept in The Arcane";}
+		elseif ($dev['devlevel'] = 4) { echo "Arcane Master";}
+		elseif ($dev['devlevel'] = 5) { echo "He Who Knows All";} 
 }else{ echo "";} ?></h3></center>
     <br />
 	<center>
