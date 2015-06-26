@@ -9,11 +9,13 @@ if(!isset($_SESSION['uid'])){
 	$leveldev= protect($_POST['leveldev']);
 	$devlevel= $dev['devlevel'];
 	$curdev= $dev['curdev'];
-	$devlevelreq= ($divlevel*500)-$curdiv;
-	$devgoldneeded= ($divlevel*100)+ceil(log($curdiv));
-		if ($leveldiv < 0) {
+	$devlevelreq= ($devlevel*500)-$curdev;
+	$devgoldneeded= ($devlevel*100)+ceil(log($curdev));
+		if ($leveldev < 0) {
 			output("What are you trying to do? Anger the Gods?");
-		}elseif ($stats['gold'] < $divgoldneeded){
+		}elseif ($devlevel = 5) {
+			output("You are already among the most pious.");
+		}elseif ($stats['gold'] < $devgoldneeded){
 			output("You do not have enough gold to bolster your devotion.");
 		}elseif ($devlevelreq < $leveldev) {
 			output("You have bolstered your faith too strong, lower it to the amount left until you level your devotion!");
