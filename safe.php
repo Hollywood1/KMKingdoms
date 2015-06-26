@@ -15,7 +15,7 @@ $weapon = mysql_fetch_assoc($weapon_get);
 $building_get = mysql_query("SELECT * FROM `building` WHERE `id`='".$_SESSION['uid']."'") or die(mysql_error());
 $building = mysql_fetch_assoc($building_get);
 
-$div_get = mysql_query("SELECT * FROM `div` WHERE `id`='".$_SESSION['uid']."'") or die(mysql_error());
-$div = mysql_fetch_assoc($stats_get);
+$dev_get = mysql_query("SELECT * FROM `dev` WHERE `id`='".$_SESSION['uid']."'") or die(mysql_error());
+$dev = mysql_fetch_assoc($dev_get);
 
 ?>

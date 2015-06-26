@@ -15,7 +15,7 @@ if(!isset($_SESSION['uid'])){
 			output("What are you trying to do? Anger the Gods?");
 		}elseif ($stats['gold'] < $divgoldneeded){
 			output("You do not have enough gold to bolster your devotion.");
-		}elseif ($devlevelreq < 0) {
+		}elseif ($devlevelreq < $leveldev) {
 			output("You have bolstered your faith too strong, lower it to the amount left until you level your devotion!");
 		}else{
 			if ($devlevelreq = 0) {
